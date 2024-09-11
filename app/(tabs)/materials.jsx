@@ -12,6 +12,9 @@ import React, { useState, useEffect } from "react";
 import { icons, images } from "../../constants";
 import { SafeAreaView } from "react-native-safe-area-context";
 import educationMaterialsController from "../controllers/educationMaterialsController";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useGlobalContext } from "../../context/GlobalProvider";
+import { router } from "expo-router";
 
 const openFile = async (url) => {
   try {
@@ -25,6 +28,7 @@ const Materials = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { isLogged, setIsLogged } = useGlobalContext();
 
   useEffect(() => {
     const loadData = async () => {
@@ -40,6 +44,12 @@ const Materials = () => {
 
     loadData();
   }, []);
+
+  const handleLogout = async () => {
+    await AsyncStorage.removeItem("accessToken");
+    setIsLogged(false);
+    router.replace("/sign-in");
+  };
 
   if (loading) {
     return (
@@ -81,7 +91,7 @@ const Materials = () => {
           resizeMode="contain"
           className="w-[80px] h-[80px]"
         />
-        <TouchableOpacity onPress={() => {}}>
+        <TouchableOpacity onPress={handleLogout}>
           <Image
             source={icons.logout}
             style={{ width: 32, height: 32 }}

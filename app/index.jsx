@@ -16,8 +16,14 @@ import { images } from "../constants";
 import CustomButton from "../components/CustomButton";
 import React, { useState, useEffect } from "react";
 import RoundButton from "../components/RoundButton";
+import { useGlobalContext } from "../context/GlobalProvider";
 
 export default function App() {
+  const { loading, isLogged } = useGlobalContext();
+
+  if (!loading && isLogged) {
+    return <Redirect href="/emotions" />;
+  }
   return (
     <SafeAreaView className={`h-full bg-goodCard`}>
       <ScrollView contentContainerStyle={{ height: "100%" }}>
