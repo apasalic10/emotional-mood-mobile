@@ -11,6 +11,8 @@ import sadEmoji from "../assets/images/sad.png";
 import goodEmoji from "../assets/images/good.png";
 import cryingEmoji from "../assets/images/crying.png";
 import neutralEmoji from "../assets/images/neutral.png";
+import relaksacijaSlika from "../assets/images/relaksacijaSlika.png";
+import relaksacijaSlika1 from "../assets/images/relaksacijaSlika1.jpg";
 
 export default {
   profile,
@@ -26,4 +28,6 @@ export default {
   goodEmoji,
   cryingEmoji,
   neutralEmoji,
+  relaksacijaSlika,
+  relaksacijaSlika1,
 };
