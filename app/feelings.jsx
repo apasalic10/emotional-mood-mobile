@@ -140,13 +140,13 @@ const FeelingScreen = () => {
                 style={styles.actionButton}
                 onPress={playRecordedSound}
               >
-                <Text style={styles.buttonText}>Play</Text>
+                <Text style={styles.buttonText}>Pokreni</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.deleteButton}
                 onPress={deleteRecordedSound}
               >
-                <Text style={styles.buttonText}>Delete</Text>
+                <Text style={styles.buttonText}>Izbriši</Text>
               </TouchableOpacity>
             </View>
           )}

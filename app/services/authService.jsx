@@ -1,4 +1,4 @@
-const API_URL = "https://1cbf-176-108-63-31.ngrok-free.app/";
+const API_URL = "https://8011-109-175-78-156.ngrok-free.app/";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 class AuthService {
